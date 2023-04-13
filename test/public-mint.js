@@ -1,5 +1,6 @@
-const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const {expect} = require("chai");
+const {ethers} = require("hardhat");
+
 
 describe("GasContest", function () {
     let GasContest = null;
@@ -14,8 +15,10 @@ describe("GasContest", function () {
         await GasContest.deployed();
     });
 
+
     describe("mint", async function () {
         signingWallet = null;
+
         function signAddress(wallet, customer) {
             return wallet.signMessage(
                 ethers.utils.arrayify(
