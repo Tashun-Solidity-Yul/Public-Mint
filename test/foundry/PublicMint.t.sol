@@ -17,6 +17,7 @@ contract PublicMintTest is Test {
         pm.setPublicMintAddress(alice);
     }
 
+
     function testSignature() public {
         bytes32 hash = keccak256(abi.encodePacked(alice));
         (uint8 v, bytes32 r, bytes32 s) = vm.sign(alicePrivateKey, hash);
